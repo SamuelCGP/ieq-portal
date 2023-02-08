@@ -8,7 +8,7 @@ export class LessonService {
   constructor() {}
 
   getAll(): Lesson[] {
-    // TODO: Make the images come from the server
+    // TODO: Make the info come from the server
 
     return [
       {
