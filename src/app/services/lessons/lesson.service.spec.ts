@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LessonImageService } from './lesson-image.service';
+import { LessonService } from './lesson.service';
 
 describe('ImageProviderService', () => {
-  let service: LessonImageService;
+  let service: LessonService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LessonImageService);
+    service = TestBed.inject(LessonService);
   });
 
   it('should be created', () => {

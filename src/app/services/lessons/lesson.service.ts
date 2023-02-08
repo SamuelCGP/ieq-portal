@@ -4,7 +4,7 @@ import { Lesson } from 'src/app/shared/models/Lesson';
 @Injectable({
   providedIn: 'root',
 })
-export class LessonImageService {
+export class LessonService {
   constructor() {}
 
   getAll(): Lesson[] {
