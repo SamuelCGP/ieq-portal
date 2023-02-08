@@ -1,13 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
-
+@use "palettes" as p;
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   font-family: "Roboto Slab", serif;
   font-size: 18px;
+}
+
+/*---------------
+    SCROLLBAR
+---------------/*
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: p.$brand-primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: p.$brand-primary-dark;
 }

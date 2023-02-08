@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageProviderService } from '../services/lessons/image-provider.service';
+import { LessonImageService } from '../services/lessons/lesson-image.service';
+import { Lesson } from '../shared/models/Lesson';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,11 @@ import { ImageProviderService } from '../services/lessons/image-provider.service
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  lessons: String[] = [];
+  lessons: Lesson[] = [];
 
-  constructor(private imageProviderService: ImageProviderService) {}
+  constructor(private imageProvider: LessonImageService) {}
 
   ngOnInit(): void {
-    this.lessons = this.imageProviderService.getAll();
+    this.lessons = this.imageProvider.getAll();
   }
 }
