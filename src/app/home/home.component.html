@@ -1,7 +1,16 @@
 <ul>
   <li *ngFor="let lesson of lessons">
-    <a>
+    <a href="{{ lesson.videoUrl }}">
       <img src="{{ lesson.imageUrl }}" alt="" />
+      <div class="content">
+        <div class="name">{{ lesson.name }}</div>
+        <input
+          type="checkbox"
+          class="watched"
+          checked="{{ lesson.watched ? 'true' : '' }}"
+        />
+        <div class="description">{{ lesson.description }}</div>
+      </div>
     </a>
   </li>
 </ul>
