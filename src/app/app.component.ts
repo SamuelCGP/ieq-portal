@@ -8,3 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ieq-portal';
 }
+
+//TODO: CRIAR COMPONENTE DE CADASTRO
+//GRAVAR OS DADOS NO JSON-SERVER

@@ -1,11 +1,28 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { Lesson } from 'src/app/shared/models/Lesson';
+import { environment } from 'src/environment/environment';
+
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class LessonService {
-  constructor() {}
+
+  apiUrl : string  = environment.apiUrl;
+
+  constructor(private httpCliente : HttpClient) {}
+
+  //TODO: Instalar o Json-Server para Consumir o Json
+  //Comando para executar o Json-Server
+  //json-server --watch db.json
+  getAllVideo() : Observable<Lesson[]>
+  {
+   return this.httpCliente.get<Lesson[]>(this.apiUrl)  
+  }
 
   getAll(): Lesson[] {
     // TODO: Make the info come from the server

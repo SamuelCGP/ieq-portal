@@ -12,7 +12,18 @@ export class HomeComponent {
 
   constructor(private imageProvider: LessonService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
     this.lessons = this.imageProvider.getAll();
   }
+
+  getVideos()
+  {
+      //CHAMADA HTTPCLIENT 
+      this.imageProvider.getAllVideo().subscribe(x =>{
+        this.lessons = x;
+      });  
+  }
+
+  //TODO:APRESENTAR MENSAGEM AO CLICAR NO CHECKBOX
+  //EXEMPLO : AULA CONCLUÍDA 
 }

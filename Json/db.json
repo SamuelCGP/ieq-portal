@@ -1,0 +1,48 @@
+{
+	"root":{
+	"kind": "youtube#searchListResponse",
+	"etag": "YvYkD7KZ9ZGazGod4JVsLkd-dX0",
+	"nextPageToken": "CAEQAA",
+	"regionCode": "BR",
+	"pageInfo": {
+		"totalResults": 566,
+		"resultsPerPage": 1
+	},
+	"items": [
+		{
+			"kind": "youtube#searchResult",
+			"etag": "PcGDa8vgHicDdMc3DjPm4DLehF0",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "rEgytRKFb0A"
+			},
+			"snippet": {
+				"publishedAt": "2023-02-06T10:50:30Z",
+				"channelId": "UCdIoL73jUHXs9gI-TUztu6Q",
+				"title": "Culto da Família, 05/02/2023 | QUADRANGULAR VILA MARA",
+				"description": "QUADRANGULAR VILA MARA contato: quadrangular_vilamara@hotmail.com Rua Ascenso Fernandes, 1552 | São Paulo/SP ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/rEgytRKFb0A/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/rEgytRKFb0A/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/rEgytRKFb0A/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Quadrangular Vila Mara",
+				"liveBroadcastContent": "none",
+				"publishTime": "2023-02-06T10:50:30Z"
+			}
+		}
+	]
+}
+}
