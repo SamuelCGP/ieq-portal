@@ -1,0 +1,50 @@
+<div class="auth">
+  <div class="outercard">
+    <!-- Mobile -->
+    <div class="promo">
+      <img src="../../assets/images/icons/logo-ieq-nome.png" />
+    </div>
+
+    <!-- Desktop -->
+
+    <!-- Both -->
+
+    <!-- Login form -->
+    <form (submit)="submit()" [formGroup]="loginForm" #formDir="ngForm">
+      <input
+        formControlName="email"
+        type="text"
+        placeholder="Email"
+        class="text-input {{
+          email.invalid && formDir.submitted ? 'error' : null
+        }}"
+      />
+      <!-- Email validation error treatment-->
+      <span *ngIf="email.invalid && formDir.submitted">
+        <p *ngIf="email.errors?.['required']" class="validation-error">
+          O email é obrigatório
+        </p>
+      </span>
+
+      <input
+        formControlName="password"
+        type="text"
+        placeholder="Senha"
+        class="text-input {{
+          password.invalid && formDir.submitted ? 'error' : null
+        }}"
+      />
+      <!-- Password validation error treatment-->
+      <span
+        *ngIf="password.invalid && formDir.submitted"
+        class="validation-error"
+      >
+        <p *ngIf="password.errors?.['required']">A senha é obrigatória</p>
+      </span>
+
+      <input type="submit" class="submit-button" />
+    </form>
+
+    <!-- Sign Up form -->
+  </div>
+</div>
