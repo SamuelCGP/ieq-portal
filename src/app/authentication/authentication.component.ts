@@ -10,6 +10,7 @@ export class AuthenticationComponent {
   loginForm!: FormGroup;
 
   ngOnInit(): void {
+    // TODO: Implement strong validation
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
