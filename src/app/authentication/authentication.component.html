@@ -5,19 +5,24 @@
     </div>
 
     <!-- Login form -->
-    <form (submit)="submit()" [formGroup]="loginForm" #formDir="ngForm">
+    <form
+      (submit)="loginSubmit()"
+      [formGroup]="loginForm"
+      #loginFormDir="ngForm"
+      *ngIf="mode"
+    >
       <h1 class="formtitle">Login</h1>
       <input
         formControlName="email"
         type="text"
         placeholder="Email"
         class="text-input {{
-          email.invalid && formDir.submitted ? 'error' : null
+          loginEmail.invalid && loginFormDir.submitted ? 'error' : null
         }}"
       />
       <!-- Email validation error treatment-->
-      <span *ngIf="email.invalid && formDir.submitted">
-        <p *ngIf="email.errors?.['required']" class="validation-error">
+      <span *ngIf="loginEmail.invalid && loginFormDir.submitted">
+        <p *ngIf="loginEmail.errors?.['required']" class="validation-error">
           O email é obrigatório
         </p>
       </span>
@@ -27,22 +32,86 @@
         type="text"
         placeholder="Senha"
         class="text-input {{
-          password.invalid && formDir.submitted ? 'error' : null
+          loginPassword.invalid && loginFormDir.submitted ? 'error' : null
         }}"
       />
       <!-- Password validation error treatment-->
-      <span
-        *ngIf="password.invalid && formDir.submitted"
-        class="validation-error"
-      >
-        <p *ngIf="password.errors?.['required']">A senha é obrigatória</p>
+      <span *ngIf="loginPassword.invalid && loginFormDir.submitted">
+        <p *ngIf="loginPassword.errors?.['required']" class="validation-error">
+          A senha é obrigatória
+        </p>
       </span>
 
       <input type="submit" class="submit-button" />
+
+      <p class="call">
+        Não possui uma conta? <b (click)="mode = !mode">Cadastre-se</b>
+      </p>
     </form>
 
     <!-- Sign Up form -->
+    <form
+      (submit)="signUpSubmit()"
+      [formGroup]="signUpForm"
+      #signUpFormDir="ngForm"
+      *ngIf="!mode"
+    >
+      <h1 class="formtitle">Cadastro</h1>
+      <input
+        formControlName="email"
+        type="text"
+        placeholder="Email"
+        class="text-input {{
+          signUpEmail.invalid && signUpFormDir.submitted ? 'error' : null
+        }}"
+      />
+      <!-- Email validation error treatment-->
+      <span *ngIf="signUpEmail.invalid && signUpFormDir.submitted">
+        <p *ngIf="signUpEmail.errors?.['required']" class="validation-error">
+          O email é obrigatório
+        </p>
+      </span>
 
-    <!-- TODO: Create Sign Up Form-->
+      <input
+        formControlName="password"
+        type="text"
+        placeholder="Senha"
+        class="text-input {{
+          signUpPassword.invalid && signUpFormDir.submitted ? 'error' : null
+        }}"
+      />
+      <!-- Password validation error treatment-->
+      <span *ngIf="signUpPassword.invalid && signUpFormDir.submitted">
+        <p *ngIf="signUpPassword.errors?.['required']" class="validation-error">
+          A senha é obrigatória
+        </p>
+      </span>
+
+      <input
+        formControlName="passwordConfirmation"
+        type="text"
+        placeholder="Confirmação de senha"
+        class="text-input {{
+          passwordConfirmation.invalid && signUpFormDir.submitted
+            ? 'error'
+            : null
+        }}"
+      />
+      <!-- Password confirmaton validation error treatment-->
+      <span *ngIf="passwordConfirmation.invalid && signUpFormDir.submitted">
+        <p
+          *ngIf="passwordConfirmation.errors?.['required']"
+          class="validation-error"
+        >
+          A senha é obrigatória
+        </p>
+      </span>
+
+      <input type="submit" class="submit-button" />
+
+      <p class="call">
+        Já possui uma conta? <b (click)="mode = !mode">Faça login</b>
+      </p>
+    </form>
   </div>
 </div>
