@@ -4,57 +4,11 @@
       <img src="../../assets/images/icons/logo-ieq-nome.png" />
     </div>
 
-    <!-- Login form -->
-    <form
-      (submit)="loginSubmit()"
-      [formGroup]="loginForm"
-      #loginFormDir="ngForm"
-      *ngIf="mode"
-    >
-      <h1 class="formtitle">Login</h1>
-      <input
-        formControlName="email"
-        type="text"
-        placeholder="Email"
-        class="text-input {{
-          loginEmail.invalid && loginFormDir.submitted ? 'error' : null
-        }}"
-      />
-      <!-- Email validation error treatment-->
-      <span *ngIf="loginEmail.invalid && loginFormDir.submitted">
-        <p *ngIf="loginEmail.errors?.['required']" class="validation-error">
-          O email é obrigatório
-        </p>
-      </span>
-
-      <input
-        formControlName="password"
-        type="text"
-        placeholder="Senha"
-        class="text-input {{
-          loginPassword.invalid && loginFormDir.submitted ? 'error' : null
-        }}"
-      />
-      <!-- Password validation error treatment-->
-      <span *ngIf="loginPassword.invalid && loginFormDir.submitted">
-        <p *ngIf="loginPassword.errors?.['required']" class="validation-error">
-          A senha é obrigatória
-        </p>
-      </span>
-
-      <input type="submit" class="submit-button" />
-
-      <p class="call">
-        Não possui uma conta? <b (click)="mode = !mode">Cadastre-se</b>
-      </p>
-    </form>
-
     <!-- Sign Up form -->
     <form
       (submit)="signUpSubmit()"
       [formGroup]="signUpForm"
       #signUpFormDir="ngForm"
-      *ngIf="!mode"
     >
       <h1 class="formtitle">Cadastro</h1>
       <input
@@ -110,7 +64,8 @@
       <input type="submit" class="submit-button" />
 
       <p class="call">
-        Já possui uma conta? <b (click)="mode = !mode">Faça login</b>
+        Já possui uma conta?
+        <b routerLink="/login">Faça login</b>
       </p>
     </form>
   </div>
