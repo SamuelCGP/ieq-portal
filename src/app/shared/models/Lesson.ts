@@ -3,6 +3,7 @@ export class Lesson {
   name!: string;
   description?: string;
   watched!: boolean;
-  imageUrl!: string;
-  videoUrl!: string;
+  imagem!: string;
+  video!: string;
+  titulo!:string;
 }
