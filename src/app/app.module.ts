@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './signUp/signUp.component';
 import { LoginComponent } from './login/login.component';
 
+//Module
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,14 @@ import { LoginComponent } from './login/login.component';
     SignUpComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: 
+  [
+    BrowserModule, 
+    AppRoutingModule, 
+    FormsModule, 
+    ReactiveFormsModule,
+  HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
