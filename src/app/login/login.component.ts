@@ -33,11 +33,6 @@ export class LoginComponent {
   }
 
   loginSubmit(): void {
-
-    const observable = new Observable((subscriber)=>{
-
-    })
-
     // TODO: Implement the form's submit
     if (!this.loginForm.invalid){
 
@@ -47,7 +42,6 @@ export class LoginComponent {
 
       const myObserver = {
         next: (x: any) =>{
-          console.log(x);
           alert(`Bem vindo ao Portal da IEQ Vila Mara ${x.email}`)
           this.router.navigate(['/dashboard']);
         },
@@ -62,10 +56,6 @@ export class LoginComponent {
       };
 
       this.loginService.Login(login).subscribe(myObserver);
-
-    }else
-    {    
-    alert('Sent');
     }
   }
 }
