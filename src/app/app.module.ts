@@ -11,7 +11,9 @@ import { SignUpComponent } from './signUp/signUp.component';
 import { LoginComponent } from './login/login.component';
 
 //Module
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LessonComponent } from './lesson/lesson.component'
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http'
     HomeComponent,
     SignUpComponent,
     LoginComponent,
+    DashboardComponent,
+    LessonComponent,
   ],
   imports: 
   [
