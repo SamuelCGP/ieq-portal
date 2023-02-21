@@ -1,6 +1,88 @@
-.card{
-    display: flex;
+@use "../../palettes" as p;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 900px) {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  }
+}
+
+.col {
+  &.f1 {
+    flex: 1;
+  }
+  &.f2 {
+    flex: 2;
+  }
+}
+
+/* Video related */
+
+.videoCard {
+  width: 100%;
+  height: auto;
+  padding-bottom: 0;
+  @media screen and (min-width: 900px) {
+    padding: 2rem;
+  }
+}
+
+.iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.lessonTitle {
+  font-size: large;
+  color: p.$brand-primary;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @media screen and (min-width: 900px) {
+    padding: 0;
+  }
+}
+
+.lessonDescription {
+  font-size: medium;
+  color: p.$brand-primary-light;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @media screen and (min-width: 900px) {
+    padding: 0;
+  }
+}
+
+/* Course Content */
+.courseContent {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  background-color: p.$brand-smoke;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    margin: 0;
+    font-size: large;
+  }
+  input[type="checkbox"] {
+    aspect-ratio: 1/1;
+    height: 70%;
+    margin: 0;
+  }
+
+  &.light {
+    background-color: white;
+  }
 }

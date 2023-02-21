@@ -1,8 +1,45 @@
 <div class="container">
-    <h3 style="text-align: center;">Titulo da Aula</h3>
-<div class="card">    
-    <iframe width="560" height="315" [src]="urlSafe1" 
-    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-</div>
+  <!-- Video related -->
+  <div class="col f2">
+    <div class="videoCard">
+      <iframe
+        class="iframe"
+        [src]="urlSafe1"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      >
+      </iframe>
+      <h1 class="lessonTitle">Titulo da Aula</h1>
+      <p class="lessonDescription">Descrição da Aula</p>
+    </div>
+  </div>
+  <!-- Course content -->
+  <div class="col f1">
+    <div class="courseContent">
+      <div class="card light">
+        <h1>Conteúdo do Curso</h1>
+      </div>
+      <div class="card">
+        <h1>Aula 1: Título da Aula</h1>
+        <input type="checkbox" />
+      </div>
+      <div class="card">
+        <h1>Aula 2: Título da Aula</h1>
+        <input type="checkbox" />
+      </div>
+      <div class="card">
+        <h1>Aula 3: Título da Aula</h1>
+        <input type="checkbox" />
+      </div>
+      <div class="card">
+        <h1>Aula 4: Título da Aula</h1>
+        <input type="checkbox" />
+      </div>
+      <div class="card">
+        <h1>Aula 5: Título da Aula</h1>
+        <input type="checkbox" />
+      </div>
+    </div>
+  </div>
 </div>
