@@ -7,12 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LessonComponent } from './lesson/lesson.component';
 
 const routes: Routes = [
-{ path: "", component: DashboardComponent},
-{ path: "dashboard", component: DashboardComponent},
-{ path:"AllLesson",component:HomeComponent},
-{ path:"lesson",component:LessonComponent},
-{ path: 'signUp', component: SignUpComponent },
-{ path: 'login', component: LoginComponent },
+  { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'AllLesson', component: HomeComponent },
+  { path: 'lesson', component: LessonComponent },
+  { path: 'signUp', component: SignUpComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
