@@ -43,6 +43,7 @@ export class LoginComponent {
       const myObserver = {
         next: (x: any) =>{
           alert(`Bem vindo ao Portal da IEQ Vila Mara ${x.email}`)
+          localStorage.setItem('email',x.email);
           this.router.navigate(['/dashboard']);
         },
         error: (err: any) => {
