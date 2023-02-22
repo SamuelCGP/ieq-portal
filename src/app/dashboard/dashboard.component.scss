@@ -1,0 +1,21 @@
+@use "../../palettes" as p;
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card{
+    border: 1px solid p.$brand-primary-smoke;
+    border-radius: 20px;    
+}
+
+.imageclass{
+    border: 1px solid p.$brand-primary-smoke;
+    border-radius: 20px;
+}
+
+.titulo{
+    text-align: center;
+}

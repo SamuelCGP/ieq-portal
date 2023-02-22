@@ -1,5 +1,9 @@
 @use "../../palettes" as p;
 
+.login{
+  background-image: url("../../assets/images/curso/logo.png");
+}
+
 .auth {
   display: flex;
   justify-content: center;

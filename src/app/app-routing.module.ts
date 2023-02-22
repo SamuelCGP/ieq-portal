@@ -7,15 +7,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LessonComponent } from './lesson/lesson.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'AllLesson', component: HomeComponent },
-      { path: 'lesson', component: LessonComponent },
-    ],
-    component: HomeComponent,
-  },
+  { path: '', 
+  children:[
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'lesson', component: LessonComponent },
+  ] ,
+  component:HomeComponent
+},
   { path: 'signUp', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
 ];
