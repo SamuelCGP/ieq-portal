@@ -1,21 +1,106 @@
 @use "../../palettes" as p;
 
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.card{
-    border: 1px solid p.$brand-primary-smoke;
-    border-radius: 20px;    
+.stripe {
+  background-color: p.$brand-primary-dark;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  h1 {
+    margin: 0;
+    font-size: large;
+    color: white;
+    margin-left: 1rem;
+  }
 }
 
-.imageclass{
-    border: 1px solid p.$brand-primary-smoke;
-    border-radius: 20px;
-}
-
-.titulo{
+.call-to-action {
+  background-color: p.$brand-smoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: p.$brand-dark;
+    margin-bottom: 0;
+    font-size: x-large;
     text-align: center;
+  }
+  p {
+    color: p.$brand-dark;
+  }
+  @media screen and (min-width: 900px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+// COURSES
+
+.course-list {
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+
+  @media screen and (min-width: 900px) {
+    width: fit-content;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.course-card {
+  width: 100%;
+  aspect-ratio: 2/1;
+  border-bottom: 0.5rem solid rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  //Title
+  h1 {
+    margin: 0;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+    flex: 1;
+  }
+
+  //Colors
+
+  &.red {
+    background-color: p.$brand-danger;
+  }
+  &.yellow {
+    background-color: p.$brand-alert;
+  }
+  &.green {
+    background-color: p.$brand-success;
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 20rem;
+  }
+}
+
+.course-icon {
+  width: 40%;
+  margin-right: 10px;
+  @media screen and (min-width: 900px) {
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
 }

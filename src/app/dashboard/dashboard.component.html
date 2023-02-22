@@ -1,14 +1,37 @@
-<div class="">
-    <h1 style="text-align: center;" >Bem vindo ao Portal IEQ Vila Mara</h1>
-    <h3 style="text-align: center;margin-top: -20px; ">Escolha seu curso</h3>
-</div>  
-<div class="container">    
-                <div class="card">
-                        <img class="imageclass" src="../../assets/images/curso/logo.png">
-                        <div class="titulo">
-                            <p>
-                                <a routerLink="/lesson" >Curso Online EBD</a>
-                            </p>
-                        </div>                
-                </div>                
+<div class="container">
+  <div class="stripe">
+    <h1>DASHBOARD</h1>
+  </div>
+  <div class="call-to-action">
+    <h1>Bem vindo(a) ao Portal IEQ Vila Mara!</h1>
+    <p>Encontre seu curso aqui</p>
+  </div>
+  <div class="course-list">
+    <div routerLink="/lesson" class="course-card green">
+      <img
+        class="course-icon"
+        src="../assets/images/courses/escola-biblica.png"
+      />
+      <h1>Escola Bíblica</h1>
+    </div>
+    <div routerLink="/lesson" class="course-card yellow">
+      <img
+        class="course-icon"
+        src="../assets/images/courses/escola-musica.png"
+      />
+      <h1>Escola de Música</h1>
+    </div>
+    <div routerLink="/lesson" class="course-card red">
+      <img class="course-icon" src="../assets/images/courses/devocional.png" />
+      <h1>Devocional</h1>
+    </div>
+
+    <div routerLink="/lesson" class="course-card green">
+      <img
+        class="course-icon"
+        src="../assets/images/courses/escola-biblica.png"
+      />
+      <h1>Curso com nome muito grande</h1>
+    </div>
+  </div>
 </div>

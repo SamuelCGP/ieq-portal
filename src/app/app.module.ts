@@ -13,7 +13,8 @@ import { LoginComponent } from './login/login.component';
 //Module
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LessonComponent } from './lesson/lesson.component'
+import { LessonComponent } from './lesson/lesson.component';
+import { CourseComponent } from './course/course.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LessonComponent } from './lesson/lesson.component'
     LoginComponent,
     DashboardComponent,
     LessonComponent,
+    CourseComponent,
   ],
   imports: 
   [
