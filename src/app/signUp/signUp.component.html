@@ -11,6 +11,22 @@
       #signUpFormDir="ngForm"
     >
       <h1 class="formtitle">Cadastro</h1>
+
+      <input
+        formControlName="name"
+        type="text"
+        placeholder="Nome de Usuário"
+        class="text-input {{
+          signUpName.invalid && signUpFormDir.submitted ? 'error' : null
+        }}"
+      />
+      <!-- Email validation error treatment-->
+      <span *ngIf="signUpName.invalid && signUpFormDir.submitted">
+        <p *ngIf="signUpName.errors?.['required']" class="validation-error">
+          O nome é obrigatório
+        </p>
+      </span>
+
       <input
         formControlName="email"
         type="text"

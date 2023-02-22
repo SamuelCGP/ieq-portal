@@ -13,15 +13,23 @@ export class SignUpComponent {
   mode: Boolean = true;
   signUpForm!: FormGroup;
 
-  constructor(private cadastroService:CadastroService,private router:Router){}
+  constructor(
+    private cadastroService: CadastroService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     // TODO: Implement strong validation
     this.signUpForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
       passwordConfirmation: new FormControl('', [Validators.required]),
     });
+  }
+
+  get signUpName() {
+    return this.signUpForm.get('name')!;
   }
 
   get signUpEmail() {
@@ -38,25 +46,25 @@ export class SignUpComponent {
 
   signUpSubmit(): void {
     // TODO: Implement the form's submit
-    if (!this.signUpForm.invalid){
-
+    if (!this.signUpForm.invalid) {
       let cadastro = new Cadastro();
+      cadastro.Nome = this.signUpName.value;
       cadastro.Email = this.signUpEmail.value;
       cadastro.Senha = this.signUpPassword.value;
       cadastro.ConfirmarSenha = this.passwordConfirmation.value;
 
       const cadastroObserver = {
-        next: (x: any) =>{
-          alert("Cadastro realizado com sucesso")
+        next: (x: any) => {
+          alert('Cadastro realizado com sucesso');
           this.router.navigate(['/login']);
         },
         error: (err: any) => {
-          if(err.status == '400'){
-            alert('erro na autenticação')
+          if (err.status == '400') {
+            alert('erro na autenticação');
           }
         },
         complete: () => {
-          console.log('Observer got a complete notification')
+          console.log('Observer got a complete notification');
         },
       };
       this.cadastroService.postCadastro(cadastro).subscribe(cadastroObserver);

@@ -1,5 +1,6 @@
-import { Login } from "./login";
+import { Login } from './login';
 
 export class Cadastro extends Login {
-    ConfirmarSenha!:string;
+  Nome!: string;
+  ConfirmarSenha!: string;
 }
