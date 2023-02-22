@@ -51,6 +51,7 @@ export class SignUpComponent {
       cadastro.Nome = this.signUpName.value;
       cadastro.Email = this.signUpEmail.value;
       cadastro.Senha = this.signUpPassword.value;
+      cadastro.Role = "aluno";
       cadastro.ConfirmarSenha = this.passwordConfirmation.value;
 
       const cadastroObserver = {
@@ -59,8 +60,8 @@ export class SignUpComponent {
           this.router.navigate(['/login']);
         },
         error: (err: any) => {
-          if (err.status == '400') {
-            alert('erro na autenticação');
+          if(err.status == '400'){
+            alert('erro na autenticação')
           }
         },
         complete: () => {
