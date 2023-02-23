@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { CourseComponent } from './course/course.component'
+
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -33,7 +38,14 @@ import { CourseComponent } from './course/course.component'
     AppRoutingModule, 
     FormsModule, 
     ReactiveFormsModule,
-  HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+      tokenGetter: tokenGetter,
+      allowedDomains: [""],
+      disallowedRoutes: [""],
+    }
+  })
   ],
   providers: [],
   bootstrap: [AppComponent],

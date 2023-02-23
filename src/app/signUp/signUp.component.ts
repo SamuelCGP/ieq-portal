@@ -62,6 +62,8 @@ export class SignUpComponent {
         error: (err: any) => {
           if(err.status == '400'){
             alert('erro na autenticação')
+          }else{
+            alert('Estamos enfrentando problemas')
           }
         },
         complete: () => {

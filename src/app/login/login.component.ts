@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/login/login.service';
 import { Login } from '../shared/models/login';
-import { ConnectableObservable, Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../services/storage/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent {
   mode: Boolean = true;
   loginForm!: FormGroup;
 
-  constructor(private loginService : LoginService,private router:Router){}
+  constructor(private loginService : LoginService,private router:Router,private serviceStorage : LocalStorageService){}
 
   ngOnInit(): void {
     // TODO: Implement strong validation
@@ -42,14 +42,17 @@ export class LoginComponent {
 
       const myObserver = {
         next: (x: any) =>{
-          alert(`Bem vindo ao Portal da IEQ Vila Mara ${x.email}`)
-          localStorage.setItem('email',x.email);
+          alert(`Bem vindo ao Portal da IEQ Vila Mara`)
           this.router.navigate(['/dashboard']);
+          this.serviceStorage.setToken(x.token)
+          this.serviceStorage.setEmail(x.email)
+          this.serviceStorage.setNome(x.nome);
         },
-        error: (err: any) => {
-          if(err.status == '400'){
-            alert('erro na autenticação')
-          }else{
+        error: (err: any) => {          
+          if(err.status == '400' || err.status == '404'){
+            alert(err.error.message);
+          }
+          else{
             alert('Estamos enfrentando problemas')
           }
         },
