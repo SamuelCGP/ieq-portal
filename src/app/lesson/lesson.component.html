@@ -1,17 +1,25 @@
+<div *ngIf="exibirConteudo">
+<div>
+  <h1 class="lessonTitle">
+    Titulo da Aula : {{aulaSelecionada.titulo}}
+  </h1>
+  <hr>
+</div>
 <div class="container">
   <!-- Video related -->
   <div class="col f2">
     <div class="videoCard">
       <iframe
         class="iframe"
-        [src]="urlSafe1"
+        [src]="urlSafe"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       >
       </iframe>
-      <h1 class="lessonTitle">Titulo da Aula</h1>
-      <p class="lessonDescription">Descrição da Aula</p>
+      <p class="lessonDescription">
+        Descrição da Aula : {{aulaSelecionada.descricao}}
+      </p>
     </div>
   </div>
   <!-- Course content -->
@@ -20,26 +28,14 @@
       <div class="card light">
         <h1>Conteúdo do Curso</h1>
       </div>
-      <div class="card">
-        <h1>Aula 1: Título da Aula</h1>
-        <input type="checkbox" />
-      </div>
-      <div class="card">
-        <h1>Aula 2: Título da Aula</h1>
-        <input type="checkbox" />
-      </div>
-      <div class="card">
-        <h1>Aula 3: Título da Aula</h1>
-        <input type="checkbox" />
-      </div>
-      <div class="card">
-        <h1>Aula 4: Título da Aula</h1>
-        <input type="checkbox" />
-      </div>
-      <div class="card">
-        <h1>Aula 5: Título da Aula</h1>
-        <input type="checkbox" />
+      <div class="card" *ngFor="let aula of aulas">
+          <h1>
+            Aula {{aula.numero}} : {{aula.titulo}} 
+          </h1>
+          <button class="btn-aula" (click)="Aula(aula.numero)">Assistir</button>
+        <!-- <input type="checkbox" /> -->
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -1,8 +1,9 @@
+
 <div class="course-list">
-    <div routerLink="/lesson/{{curso.Id}}" class="course-card green" *ngFor="let curso of cursos">
+    <div *ngFor="let curso of cursos" routerLink="/lesson/{{curso.Id}}/1" class="course-card green">
       <img
         class="course-icon"
-        src="{{curso.Imagem}}"/>
-      <h1>{{curso.Titulo}}</h1>
+        src="../../assets/images/courses/{{curso.Imagem}}"/>
+      <h1>{{curso.Titulo}}</h1>      
     </div>
 </div>

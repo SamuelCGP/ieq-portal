@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { ChildrenOutletContexts, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './signUp/signUp.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LessonComponent } from './lesson/lesson.component';
+import { ConstrucaoComponent } from './construcao/construcao.component'
 import { UsuarioGuard } from './autentication/autentication.guard';
 
 const routes: Routes = [
@@ -17,6 +18,9 @@ const routes: Routes = [
         { path:'',component:HomeComponent},
         { path: 'dashboard', component: DashboardComponent},
         { path: 'lesson', component: LessonComponent },
+        { path: 'construcao',component:ConstrucaoComponent},
+        { path: 'lesson/:cursoId/:id',component:LessonComponent},
+        { path: 'lesson/:cursoId',component:LessonComponent},
     ]
   }
 ];

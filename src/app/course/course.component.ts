@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Lesson } from '../shared/models/Lesson';
 import { Course } from '../shared/models/Course';
+import { CursosService } from '../services/cursos/cursos.service';
 
 @Component({
   selector: 'app-course',
@@ -10,38 +11,16 @@ import { Course } from '../shared/models/Course';
 
 export class CourseComponent implements OnInit {
 
+  constructor(private http:CursosService) {}
+
   cursos:Course[] =[]
 
-
   ngOnInit(): void {
-    this.ObterCursos();
+    this.http.ObterCursos().subscribe(x =>{
+      this.cursos=(x);
+      console.log(x);
+    })
   }
 
-  ObterCursos(){
-    this.cursos.push(
-      {
-        Id:1,
-        Titulo:"Escola Bíblica",
-        Imagem:"../assets/images/courses/escola-biblica.png"
-      }
-      ,
-      {
-        Id:2,
-        Titulo:"Escola de Música",
-        Imagem:"../assets/images/courses/escola-musica.png"
-      }
-      ,
-      {
-        Id:3,
-        Titulo:"Devocional",
-        Imagem:"../assets/images/courses/devocional.png"
-      }
-      ,
-      {
-        Id:4,
-        Titulo:"Curso com nome muito grande",
-        Imagem:"../assets/images/courses/escola-biblica.png"
-      }
-    )
-  }
+  
 }
