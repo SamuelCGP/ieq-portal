@@ -11,7 +11,7 @@ import { LocalStorageService } from '../services/storage/local-storage.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  mode: Boolean = true;
+  loader: Boolean = false;
   loginForm!: FormGroup;
 
   constructor(private loginService : LoginService,private router:Router,private serviceStorage : LocalStorageService){}
@@ -35,7 +35,7 @@ export class LoginComponent {
   loginSubmit(): void {
     // TODO: Implement the form's submit
     if (!this.loginForm.invalid){
-
+      this.loader = true;
       let login = new Login();
       login.Email = this.loginEmail.value;
       login.Senha = this.loginPassword.value;
@@ -47,6 +47,7 @@ export class LoginComponent {
           this.serviceStorage.setToken(x.token)
           this.serviceStorage.setEmail(x.email)
           this.serviceStorage.setNome(x.nome);
+          this.loader = false;
         },
         error: (err: any) => {          
           if(err.status == '400' || err.status == '404'){
@@ -55,6 +56,7 @@ export class LoginComponent {
           else{
             alert('Estamos enfrentando problemas')
           }
+          this.loader = false;
         },
         complete: () => {
           console.log('Observer got a complete notification')

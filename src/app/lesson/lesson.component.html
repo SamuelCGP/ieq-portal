@@ -16,10 +16,7 @@
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       >
-      </iframe>
-      <p class="lessonDescription">
-        Descrição da Aula : {{aulaSelecionada.descricao}}
-      </p>
+      </iframe>      
     </div>
   </div>
   <!-- Course content -->
@@ -37,5 +34,28 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="questionario">
+<div class="descricao">
+  <p class="lessonDescription">   
+    Descrição da Aula :
+  </p>
+  <textarea type="text" class="descricaoAula" disabled>{{aulaSelecionada.descricao}}</textarea>
+</div>
+  <div>
+  <form>
+    <h1>Questões sobre a aula</h1>
+    <label>1º O que a aula te ensinou ?</label>
+    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
+    <label>2º O que a aula te ensinou ?</label>
+    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
+    <label>3º O que a aula te ensinou ?</label>
+    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
+    <label>4º O que a aula te ensinou ?</label>
+    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
+    <input type="submit" value="Enviar Respostas">
+  </form>
+</div>
 </div>
 </div>
