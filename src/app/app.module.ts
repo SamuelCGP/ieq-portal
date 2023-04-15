@@ -16,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { CourseComponent } from './course/course.component';
-import { ConstrucaoComponent } from './construcao/construcao.component'
+import { ConstrucaoComponent } from './construcao/construcao.component';
+import { QuestionarioComponent } from './questionario/questionario.component'
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -33,6 +34,7 @@ export function tokenGetter() {
     LessonComponent,
     CourseComponent,
     ConstrucaoComponent,
+    QuestionarioComponent,
   ],
   imports: 
   [

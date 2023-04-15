@@ -1,0 +1,46 @@
+<div class="questionario">
+      <div *ngIf="exibirFormulario1">
+      <form [formGroup]="formulario1">
+        <h1>Questões sobre a aula</h1>
+        <label>1º O que a aula te ensinou ?</label>
+        <input formControlName="respostaUm" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+        <input type="submit" value="Enviar Respostas">
+      </form>      
+    </div>
+    <div *ngIf="exibirFormulario2">
+        <form [formGroup]="formulario2">
+          <h1>Questões sobre a aula</h1>
+          <label>1º O que a aula te ensinou ?</label>
+          <input formControlName="respostaUm" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <label>2º O que a aula te ensinou ?</label>
+          <input formControlName="respostaDois" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <input type="submit" value="Enviar Respostas">
+        </form>      
+      </div>
+      <div *ngIf="exibirFormulario3">
+        <form [formGroup]="formulario3">
+          <h1>Questões sobre a aula</h1>
+          <label>1º O que a aula te ensinou ?</label>
+          <input formControlName="respostaUm" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <label>2º O que a aula te ensinou ?</label>
+          <input formControlName="respostaDois" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <label>3º O que a aula te ensinou ?</label>
+          <input formControlName="respostaTres" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <input type="submit" value="Enviar Respostas">
+        </form>      
+      </div>
+      <div *ngIf="exibirFormulario4">
+        <form [formGroup]="formulario4">
+          <h1>Questões sobre a aula</h1>
+          <label>1º O que a aula te ensinou ?</label>
+          <input formControlName="respostaUm" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <label>2º O que a aula te ensinou ?</label>
+          <input formControlName="respostaDois" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <label>3º O que a aula te ensinou ?</label>
+          <input formControlName="respostaTres" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <label>4º O que a aula te ensinou ?</label>
+          <input formControlName="respostaQuatro" placeholder="Digite sua resposta" type="text" style="width: 100%;">       
+          <input type="submit" value="Enviar Respostas">
+        </form>      
+      </div>
+    </div>

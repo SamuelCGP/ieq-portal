@@ -6,7 +6,6 @@
   <hr>
 </div>
 <div class="container">
-  <!-- Video related -->
   <div class="col f2">
     <div class="videoCard">
       <iframe
@@ -19,7 +18,6 @@
       </iframe>      
     </div>
   </div>
-  <!-- Course content -->
   <div class="col f1">
     <div class="courseContent">
       <div class="card light">
@@ -30,32 +28,19 @@
             Aula {{aula.numero}} : {{aula.titulo}} 
           </h1>
           <button class="btn-aula" (click)="Aula(aula.numero)">Assistir</button>
-        <!-- <input type="checkbox" /> -->
+      </div>
+      <div class="card">
+          <h1>Questionario</h1>
+          <a type="button" class="btn-aula" routerLink="/questionario/{{cursoId}}">Responder</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="questionario">
 <div class="descricao">
   <p class="lessonDescription">   
     Descrição da Aula :
-  </p>
+  </p>      
   <textarea type="text" class="descricaoAula" disabled>{{aulaSelecionada.descricao}}</textarea>
-</div>
-  <div>
-  <form>
-    <h1>Questões sobre a aula</h1>
-    <label>1º O que a aula te ensinou ?</label>
-    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
-    <label>2º O que a aula te ensinou ?</label>
-    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
-    <label>3º O que a aula te ensinou ?</label>
-    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
-    <label>4º O que a aula te ensinou ?</label>
-    <input placeholder="Digite sua resposta" type="text" style="width: 100%;">
-    <input type="submit" value="Enviar Respostas">
-  </form>
-</div>
 </div>
 </div>

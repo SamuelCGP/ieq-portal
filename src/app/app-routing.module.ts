@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { ConstrucaoComponent } from './construcao/construcao.component'
 import { UsuarioGuard } from './autentication/autentication.guard';
+import { QuestionarioComponent } from './questionario/questionario.component';
 
 const routes: Routes = [
   { path: 'signUp', component: SignUpComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
         { path: 'construcao',component:ConstrucaoComponent},
         { path: 'lesson/:cursoId/:id',component:LessonComponent},
         { path: 'lesson/:cursoId',component:LessonComponent},
+        { path: 'questionario/:aulaId',component:QuestionarioComponent}
     ]
   }
 ];
