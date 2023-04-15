@@ -4,10 +4,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './signUp/signUp.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LessonComponent } from './lesson/lesson.component';
+import { LessonComponent } from './aula/lesson/lesson.component';
 import { ConstrucaoComponent } from './construcao/construcao.component'
 import { UsuarioGuard } from './autentication/autentication.guard';
-import { QuestionarioComponent } from './questionario/questionario.component';
+import { QuestionarioComponent } from './aula/questionario/questionario.component';
+import { AulaComponent } from './aula/aula.component';
 
 const routes: Routes = [
   { path: 'signUp', component: SignUpComponent },
@@ -18,10 +19,9 @@ const routes: Routes = [
       children:[
         { path:'',component:HomeComponent},
         { path: 'dashboard', component: DashboardComponent},
-        { path: 'lesson', component: LessonComponent },
+        { path:'aula',component:AulaComponent},
+        { path:'aula/:cursoId/:id',component:AulaComponent},
         { path: 'construcao',component:ConstrucaoComponent},
-        { path: 'lesson/:cursoId/:id',component:LessonComponent},
-        { path: 'lesson/:cursoId',component:LessonComponent},
         { path: 'questionario/:aulaId',component:QuestionarioComponent}
     ]
   }

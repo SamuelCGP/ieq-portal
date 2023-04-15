@@ -1,11 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { AulaSignature, Aulas, Lesson } from '../shared/models/Lesson';
+import { AulaSignature, Aulas } from '../../shared/models/Lesson';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LessonService } from '../services/lessons/lesson.service';
-import { QuestionarioDto, QuestionarioResult, QuestionarioSignature } from '../shared/models/Questionario';
-import { QuestionarioService } from '../services/Questionario/questionario.service';
-import { concat, interval, map, tap, zip } from 'rxjs';
+import { LessonService } from '../service/lessons/lesson.service';
+import { QuestionarioService } from '../service/Questionario/questionario.service';
+import { InformacoesAulaService } from '../service/informacoes-aula.service';
+import { AulaDto } from '../model/aulaDto';
 
 @Component({
   selector: 'app-lesson',
@@ -14,12 +14,16 @@ import { concat, interval, map, tap, zip } from 'rxjs';
 })
 export class LessonComponent implements OnInit {
 
-  constructor(private sanitizer:DomSanitizer,
+  constructor(
+    private comunicacao : InformacoesAulaService,
+    private sanitizer:DomSanitizer,
               private activatedRouter:ActivatedRoute,
               private lessonService : LessonService,
               private questionarioService : QuestionarioService,
               private router : Router
               ){}
+
+  aulaDto = new AulaDto();
 
   exibirConteudo:boolean = false;
   aulaSelecionada = new Aulas();
@@ -51,15 +55,18 @@ export class LessonComponent implements OnInit {
     this.aulaSelecionada.descricao = x.descricao;
     this.aulaSelecionada.titulo = x.titulo;
     this.aulaSelecionada.url = x.url;
+    this.aulaDto.Descricao = x.descricao;
+    this.aulaDto.Titulo = x.titulo;
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${x.url}`);
+    this.comunicacao.mensagem.emit(this.aulaDto);
   });
   })
 }
   Aula(id:any){
     let aulaSelecionada = this.aulas.filter(x => x.numero == id);
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${aulaSelecionada[0].url}`)
-    this.aulaSelecionada.titulo = aulaSelecionada[0].titulo;
-    this.aulaSelecionada.descricao = aulaSelecionada[0].descricao;
+    this.aulaSelecionada.titulo , this.aulaDto.Titulo = aulaSelecionada[0].titulo;
+    this.aulaSelecionada.descricao , this.aulaDto.Descricao = aulaSelecionada[0].descricao;    
+    this.comunicacao.mensagem.emit(this.aulaDto);
   }
-
 }

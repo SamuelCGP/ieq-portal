@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { QuestionarioResult, QuestionarioSignature } from '../shared/models/Questionario';
-import { QuestionarioService } from '../services/Questionario/questionario.service';
+import { QuestionarioResult, QuestionarioSignature } from '../../shared/models/Questionario';
+import { QuestionarioService } from '../service/Questionario/questionario.service';
 
 @Component({
   selector: 'app-questionario',

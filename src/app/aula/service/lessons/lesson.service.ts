@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, delay } from 'rxjs';
-import { AulaSignature, Aulas, Lesson } from '../../shared/models/Lesson';
+import { AulaSignature, Aulas, Lesson } from '../../../shared/models/Lesson';
 
 @Injectable({
   providedIn: 'root',

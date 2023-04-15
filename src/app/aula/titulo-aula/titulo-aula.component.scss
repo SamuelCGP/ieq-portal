@@ -1,0 +1,12 @@
+@use "../../../palettes" as p;
+
+.lessonTitle {
+    font-size: large;
+    color: p.$brand-primary;
+    margin-left: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media screen and (min-width: 900px) {
+      padding: 0;
+    }
+  }

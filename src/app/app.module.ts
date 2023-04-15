@@ -14,10 +14,13 @@ import { LoginComponent } from './login/login.component';
 //Module
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LessonComponent } from './lesson/lesson.component';
+import { LessonComponent } from './aula/lesson/lesson.component';
 import { CourseComponent } from './course/course.component';
 import { ConstrucaoComponent } from './construcao/construcao.component';
-import { QuestionarioComponent } from './questionario/questionario.component'
+import { QuestionarioComponent } from './aula/questionario/questionario.component';
+import { AulaComponent } from './aula/aula.component';
+import { DescricaoAulaComponent } from './aula/descricao-aula/descricao-aula.component';
+import { TituloAulaComponent } from './aula/titulo-aula/titulo-aula.component'
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -35,6 +38,9 @@ export function tokenGetter() {
     CourseComponent,
     ConstrucaoComponent,
     QuestionarioComponent,
+    AulaComponent,
+    DescricaoAulaComponent,
+    TituloAulaComponent,
   ],
   imports: 
   [

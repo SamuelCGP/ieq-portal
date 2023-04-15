@@ -1,4 +1,4 @@
-@use "../../palettes" as p;
+@use "../../../palettes" as p;
 
 .container {
   display: flex;
@@ -32,17 +32,6 @@
   aspect-ratio: 16 / 9;
   width: 100%;
   box-shadow: 10px 5px 5px grey;
-}
-
-.lessonTitle {
-  font-size: large;
-  color: p.$brand-primary;
-  margin-left: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  @media screen and (min-width: 900px) {
-    padding: 0;
-  }
 }
 
 .lessonDescription {
